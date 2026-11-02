@@ -17,24 +17,13 @@ apps-script/Code.gs Google Apps Script backend (availability + creating calendar
 
 ## How booking works
 
-1. The client picks a service, a barber (or "no preference"), a day and a time.
-2. The page asks the Apps Script which times are free. The script reads the barber's Google Calendar:
-   - **A barber can only be booked inside events titled "Busy"** (or "Disponible" / "Available"). Example: an event *Busy* from 17:00 to 21:00 opens 17:00–21:00 for clients. No "Busy" event that day = that barber can't be booked that day. Tip: make it a repeating event for a regular shift.
+1. The client picks a service, a barber, a day and a time.
+2. The script reads the barber's Google Calendar:
+   - **A barber can only be booked inside events titled "Busy"** (or "Disponible" / "Available").
    - **Any other event inside that window takes the time away**: other clients, lunch, a dentist appointment.
-   - While barbers share one calendar, put the name in the title: *"Busy Ivan"* only opens Ivan, *"Lunch Ivan"* only blocks Ivan. Without a name it applies to every barber on that calendar.
+   - While barbers share one calendar knowing each and every shift as well as any appointment they will be taking throughout their day.
    - The words are set in `AVAILABILITY_WORDS` in `Code.gs`.
-3. On confirm, the script re-checks the slot (with a lock so two people can't take the same one) and creates the event on that barber's calendar with the client's name, phone and notes. If the client gave an email, they get a Google Calendar invite.
-
-## Setup (about 15 minutes, done once by the owner)
-
-### 1. Calendars
-
-Pick one Google account to run the booking — the **owner account**. Then either:
-
-- **Option A — each barber has their own Gmail:** each barber opens Google Calendar → Settings → their calendar → *Share with specific people* → adds the owner account with **"Make changes to events"**.
-- **Option B — the owner creates 4 calendars** ("Emiliano", "Ivan", "Jesus", "Moises") in their own Google Calendar, and shares each one with that barber so it shows on the barber's phone.
-
-For each calendar, copy its **Calendar ID** (Settings → the calendar → *Integrate calendar*). It looks like `xxxxx@group.calendar.google.com` or the person's Gmail address.
+3. On confirm, the script re-checks the slot and creates the event on that barber's calendar with the client's name, phone and notes. If the client gave an email, they get a Google Calendar invite.
 
 ### 2. Apps Script
 
