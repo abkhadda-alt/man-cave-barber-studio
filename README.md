@@ -87,6 +87,22 @@ The homepage shows the rating and photos of the barbers' work right away. To als
 
 Only 4★ and 5★ reviews with text are shown (change `minStars` / `max` in `js/config.js`). Google returns up to 5 recent reviews.
 
+## Saving and publishing changes
+
+- **Code & history:** https://github.com/abkhadda-alt/man-cave-barber-studio (public: anyone can view, only the owner can change it).
+- **Live site:** https://man-cave-barber-studio.vercel.app, published straight from this folder.
+
+After editing, from this folder:
+
+```bash
+git add -A
+git commit -m "Describe the change"
+git push
+npx vercel deploy --prod
+```
+
+`.vercelignore` keeps `apps-script/`, `business-card/`, this README and logo drafts off the website. `.gitignore` keeps local settings and the Vercel token file (`.env.local`) out of GitHub. Changes to `apps-script/Code.gs` must also be pasted into the Apps Script editor and deployed as a new version (see above).
+
 ## Changing things later
 
 | To change | Edit |
