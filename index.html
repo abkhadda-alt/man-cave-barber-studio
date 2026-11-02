@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Man Cave Barber Studio — Barbier à Saint-Hubert, Longueuil</title>
+  <meta name="description" content="Barbier à Saint-Hubert (Longueuil). Coupes classiques et modernes, barbe au rasoir, soins Deluxe. Réservez en ligne. 4,7★ sur Google." />
+  <meta property="og:title" content="Man Cave Barber Studio" />
+  <meta property="og:description" content="Le refuge de l'homme — barbier à Saint-Hubert, Longueuil. Réservez en ligne." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600&family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarberShop",
+    "name": "Man Cave Barber Studio",
+    "telephone": "+1-514-604-2040",
+    "address": { "@type": "PostalAddress", "streetAddress": "3678 Chemin de Chambly", "addressLocality": "Longueuil", "addressRegion": "QC", "postalCode": "J4L 1N8", "addressCountry": "CA" },
+    "openingHours": ["Mo-Fr 09:00-21:00", "Sa 09:00-19:00", "Su 09:00-15:00"],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "91" },
+    "sameAs": ["https://www.instagram.com/mancavebarberstudio/", "https://www.facebook.com/mancavebarberstudio/"]
+  }
+  </script>
+</head>
+<body>
+  <!-- Loading screen: MAN [photos of the shop's work] CAVE, then the photo opens into the page -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="ld-photo" id="ldPhoto">
+      <img src="images/work/fade-mirror.jpg" alt="" />
+      <img src="images/work/beard.jpg" alt="" />
+      <img src="images/work/profile.jpg" alt="" />
+      <img src="images/work/fade-back.jpg" alt="" />
+      <img src="images/work/shop.jpg" alt="" />
+    </div>
+    <div class="ld-row">
+      <span class="ld-word ld-left">MAN</span>
+      <span class="ld-slot" id="ldSlot"></span>
+      <span class="ld-word ld-right">CAVE</span>
+    </div>
+    <div class="ld-foot">
+      <span class="ld-tag">Barber Studio · Saint-Hubert</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Man Cave Barber Studio">
+        <img id="logo" alt="" />
+      </a>
+      <nav class="nav">
+        <a class="link" href="#services" data-i18n="nav.services">Services</a>
+        <a class="link" href="#team" data-i18n="nav.team">L'équipe</a>
+        <a class="link" href="#visit" data-i18n="nav.visit">Nous trouver</a>
+        <div class="langs" role="group" aria-label="Langue / Language / Idioma">
+          <button data-lang="fr">FR</button><button data-lang="en">EN</button><button data-lang="es">ES</button>
+        </div>
+        <a class="btn btn-gold btn-sm" href="book.html" data-i18n="nav.book">Réserver</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="hero">
+      <div class="wrap">
+        <div class="walkin"><span class="yes" data-i18n="hero.walkin"></span><span class="langs-spoken">Français · English · Español</span></div>
+        <h1 class="hero-logo"><img src="images/logo-mancave-mc-letters.png" alt="Man Cave" width="2400" height="414" /></h1>
+        <p data-i18n="hero.sub"></p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="book.html" data-i18n="hero.cta"></a>
+          <a class="btn btn-ghost" id="callBtn"><span data-i18n="hero.call"></span>&nbsp;<span id="phoneText"></span></a>
+        </div>
+        <a class="rating" href="#reviews"><span class="stars" aria-hidden="true">★★★★★</span><b id="ratingVal"></b><span id="ratingCount"></span></a>
+      </div>
+    </section>
+
+    <section class="block reviews" id="reviews">
+      <div class="wrap">
+        <div class="section-head reviews-head">
+          <div>
+            <div class="kicker" data-i18n="reviews.kicker"></div>
+            <h2 data-i18n="reviews.title"></h2>
+          </div>
+          <a class="btn btn-ghost btn-sm" id="reviewsAll" target="_blank" rel="noopener" data-i18n="reviews.all"></a>
+        </div>
+      </div>
+      <div class="reviews-row" id="reviewsRow"></div>
+    </section>
+
+    <section class="block" id="services">
+      <div class="wrap">
+        <div class="promo">
+          <div>
+            <span class="tag" data-i18n="promo.tag"></span>
+            <h3 data-i18n="promo.title"></h3>
+            <p data-i18n="promo.sub"></p>
+          </div>
+          <a class="btn btn-gold" href="book.html?service=tuesday" data-i18n="promo.cta"></a>
+        </div>
+
+        <div class="section-head" style="margin-top:64px">
+          <div class="kicker" data-i18n="services.kicker"></div>
+          <h2 data-i18n="services.title"></h2>
+        </div>
+        <div class="services" id="serviceList"></div>
+      </div>
+    </section>
+
+    <section class="block" id="team" style="background:var(--bg-2)">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-i18n="team.kicker"></div>
+          <h2 data-i18n="team.title"></h2>
+        </div>
+        <div class="team" id="teamList"></div>
+      </div>
+    </section>
+
+    <section class="block" id="visit">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker" data-i18n="visit.kicker"></div>
+          <h2 data-i18n="visit.title"></h2>
+        </div>
+        <div class="visit">
+          <div class="panel">
+            <p class="address" id="addr1"></p>
+            <p style="margin:0 0 6px;color:var(--muted)" id="addr2"></p>
+            <p style="margin:0 0 18px"><a id="phoneLink"></a></p>
+            <a class="btn btn-ghost btn-sm" id="dirBtn" target="_blank" rel="noopener" data-i18n="visit.directions"></a>
+            <h3 style="margin-top:28px" data-i18n="visit.hours"></h3>
+            <ul class="hours" id="hoursList"></ul>
+            <h3 style="margin-top:28px" data-i18n="visit.follow"></h3>
+            <div class="socials">
+              <a class="btn btn-ghost btn-sm" id="igLink" target="_blank" rel="noopener">Instagram</a>
+              <a class="btn btn-ghost btn-sm" id="fbLink" target="_blank" rel="noopener">Facebook</a>
+            </div>
+          </div>
+          <div class="map"><iframe id="mapFrame" loading="lazy" title="Google Maps" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© <span id="year"></span> Man Cave Barber Studio</span>
+      <div class="pay">
+        <span data-i18n="footer.pay"></span>
+        <div class="pay-icons">
+          <img src="images/pay/square.svg" alt="Square" />
+          <img src="images/pay/applepay.svg" alt="Apple Pay" />
+          <img src="images/pay/googlepay.svg" alt="Google Pay" />
+          <img src="images/pay/visa.svg" alt="Visa" />
+          <img src="images/pay/mastercard.svg" alt="Mastercard" />
+          <img src="images/pay/americanexpress.svg" alt="American Express" />
+          <img src="images/pay/discover.svg" alt="Discover" />
+          <img src="images/pay/jcb.svg" alt="JCB" />
+          <img src="images/pay/afterpay.svg" alt="Afterpay" />
+          <img src="images/pay/interac.svg" alt="Interac" />
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta"><a class="btn btn-gold" href="book.html" data-i18n="hero.cta"></a></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/reviews.js"></script>
+  <script src="js/loader.js"></script>
+</body>
+</html>

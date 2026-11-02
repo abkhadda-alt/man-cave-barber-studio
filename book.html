@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Réserver — Man Cave Barber Studio</title>
+  <meta name="description" content="Réservez votre coupe chez Man Cave Barber Studio, Saint-Hubert (Longueuil)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600&family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="book-page">
+  <header class="header">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Man Cave Barber Studio">
+        <img id="logo" alt="" />
+      </a>
+      <nav class="nav">
+        <a class="link" href="index.html" data-i18n="book.back">Retour au site</a>
+        <div class="langs" role="group" aria-label="Langue / Language / Idioma">
+          <button data-lang="fr">FR</button><button data-lang="en">EN</button><button data-lang="es">ES</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="book-shell" id="shell">
+      <div id="flow">
+        <h1 data-i18n="book.title"></h1>
+        <div class="demo-note" id="demoNote" hidden data-i18n="book.demo"></div>
+
+        <section class="step" data-step="1">
+          <div class="step-head">
+            <span class="step-num">1</span><span class="step-title" data-i18n="book.step1"></span>
+            <span class="step-value" data-value></span>
+          </div>
+          <div class="step-body"><div class="options" id="serviceOpts"></div></div>
+        </section>
+
+        <section class="step" data-step="2">
+          <div class="step-head">
+            <span class="step-num">2</span><span class="step-title" data-i18n="book.step2"></span>
+            <span class="step-value" data-value></span>
+          </div>
+          <div class="step-body"><div class="options" id="barberOpts"></div></div>
+        </section>
+
+        <section class="step" data-step="3">
+          <div class="step-head">
+            <span class="step-num">3</span><span class="step-title" data-i18n="book.step3"></span>
+            <span class="step-value" data-value></span>
+          </div>
+          <div class="step-body">
+            <div class="sub-label" style="margin-top:0" data-i18n="book.pickDay"></div>
+            <div class="days" id="days"></div>
+            <div class="sub-label" data-i18n="book.pickTime"></div>
+            <div id="slotArea"></div>
+          </div>
+        </section>
+
+        <section class="step" data-step="4">
+          <div class="step-head">
+            <span class="step-num">4</span><span class="step-title" data-i18n="book.step4"></span>
+          </div>
+          <div class="step-body">
+            <form class="form" id="form" novalidate>
+              <div class="field"><label for="name" data-i18n="book.name"></label><input id="name" name="name" autocomplete="name" maxlength="80" required /></div>
+              <div class="two">
+                <div class="field"><label for="phone" data-i18n="book.phone"></label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30" required /></div>
+                <div class="field"><label for="email" data-i18n="book.email"></label><input id="email" name="email" type="email" autocomplete="email" maxlength="120" /></div>
+              </div>
+              <div class="field"><label for="notes" data-i18n="book.notes"></label><textarea id="notes" name="notes" maxlength="500"></textarea></div>
+              <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <p class="err" id="formErr" role="alert"></p>
+              <button class="btn btn-gold" type="submit" id="submitBtn" data-i18n="book.confirm"></button>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <aside class="summary">
+        <div class="panel">
+          <h3 data-i18n="book.summary"></h3>
+          <div id="summary"></div>
+          <p class="policy" data-i18n="book.policy"></p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/book.js"></script>
+</body>
+</html>

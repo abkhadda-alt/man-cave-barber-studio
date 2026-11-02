@@ -1,0 +1,21 @@
+# Files kept in the project but NOT published on the website.
+.git/
+.claude/
+.gitignore
+.vercelignore
+README.md
+apps-script/
+business-card/
+
+# Logo drafts and print files (the site only uses logo-mc-lime.png and logo-mancave-mc-letters.png)
+images/logo.png
+images/logo-badge.*
+images/logo-mc-gold.*
+images/logo-mc-silver.*
+images/logo-mc-lime-solid.png
+images/logo-mc-script.png
+images/logo-mancave-lockup*.png
+images/logo-mancave-stacked.png
+images/logo-mancave-wordmark*.png
+.env*
+.vercel/

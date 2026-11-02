@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 1200" width="1200" height="1200">
+<defs>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fff59a"/><stop offset=".35" stop-color="#f2d635"/>
+    <stop offset=".55" stop-color="#c9b521"/><stop offset=".75" stop-color="#f7e45a"/><stop offset="1" stop-color="#d9c62c"/>
+  </linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#d4d4d4"/>
+    <stop offset=".5" stop-color="#8a8a8a"/><stop offset=".7" stop-color="#e6e6e6"/><stop offset="1" stop-color="#a9a9a9"/>
+  </linearGradient>
+  <linearGradient id="handle" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#2a2a2a"/><stop offset=".45" stop-color="#121212"/><stop offset="1" stop-color="#050505"/>
+  </linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#000" stop-opacity=".35"/><stop offset=".22" stop-color="#fff" stop-opacity=".45"/>
+    <stop offset=".4" stop-color="#fff" stop-opacity="0"/><stop offset=".8" stop-color="#000" stop-opacity=".15"/>
+    <stop offset="1" stop-color="#000" stop-opacity=".5"/>
+  </linearGradient>
+  <pattern id="stripes" width="120" height="120" patternUnits="userSpaceOnUse" patternTransform="rotate(-32)">
+    <rect width="120" height="120" fill="#f4f1e8"/>
+    <rect y="0" width="120" height="38" fill="#c8102e"/>
+    <rect y="60" width="120" height="38" fill="#1f3a93"/>
+  </pattern>
+  <clipPath id="tube"><rect x="540" y="350" width="120" height="500" rx="10"/></clipPath>
+  <path id="topArc" d="M 145 600 A 455 455 0 0 1 1055 600"/>
+  <path id="botArc" d="M 85 600 A 515 515 0 0 0 1115 600"/>
+</defs>
+
+<!-- badge -->
+<circle cx="600" cy="600" r="585" fill="#2a2a24"/>
+<circle cx="600" cy="600" r="572" fill="none" stroke="url(#gold)" stroke-width="14"/>
+<circle cx="600" cy="600" r="546" fill="none" stroke="url(#gold)" stroke-width="3"/>
+<circle cx="600" cy="600" r="418" fill="#1c1c18" stroke="url(#gold)" stroke-width="6"/>
+<circle cx="600" cy="600" r="404" fill="none" stroke="url(#gold)" stroke-width="2" stroke-opacity=".6"/>
+
+<text font-family="Oswald" font-weight="600" font-size="112" letter-spacing="14" fill="url(#gold)" text-anchor="middle">
+  <textPath xlink:href="#topArc" href="#topArc" startOffset="50%">MAN CAVE</textPath>
+</text>
+<text font-family="Oswald" font-weight="500" font-size="74" letter-spacing="12" fill="url(#gold)" text-anchor="middle">
+  <textPath xlink:href="#botArc" href="#botArc" startOffset="50%">BARBER STUDIO</textPath>
+</text>
+<polygon points="118.0,574.0 124.9,590.5 142.7,592.0 129.1,603.6 133.3,621.0 118.0,611.7 102.7,621.0 106.9,603.6 93.3,592.0 111.1,590.5" fill="url(#gold)"/><polygon points="1082.0,574.0 1088.9,590.5 1106.7,592.0 1093.1,603.6 1097.3,621.0 1082.0,611.7 1066.7,621.0 1070.9,603.6 1057.3,592.0 1075.1,590.5" fill="url(#gold)"/>
+
+<!-- crossed tools behind the pole -->
+<g transform="translate(600 600) rotate(42) scale(.9) translate(0 170)">
+  <g transform="rotate(6) scale(-1 1)">
+  <path d="M -17 0 L -3 -418 Q 5 -416 17 -24 L 17 0 Z" fill="url(#metal)" stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M -9 -20 L -2 -380" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+  <path d="M 0 0 L 30 84" stroke="#0b0b0b" stroke-width="22" stroke-linecap="round"/>
+  <path d="M 0 0 L 30 84" stroke="url(#metal)" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="32" cy="118" r="36" fill="none" stroke="#0b0b0b" stroke-width="22"/>
+  <circle cx="32" cy="118" r="36" fill="none" stroke="url(#metal)" stroke-width="13"/></g>
+  <g transform="rotate(-6)">
+  <path d="M -17 0 L -3 -418 Q 5 -416 17 -24 L 17 0 Z" fill="url(#metal)" stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M -9 -20 L -2 -380" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+  <path d="M 0 0 L 30 84" stroke="#0b0b0b" stroke-width="22" stroke-linecap="round"/>
+  <path d="M 0 0 L 30 84" stroke="url(#metal)" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="32" cy="118" r="36" fill="none" stroke="#0b0b0b" stroke-width="22"/>
+  <circle cx="32" cy="118" r="36" fill="none" stroke="url(#metal)" stroke-width="13"/></g>
+  <circle cx="0" cy="0" r="14" fill="url(#metal)" stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round"/>
+</g>
+<g transform="translate(600 600) rotate(-42)">
+  <path d="M -30 -40 L -30 -300 Q -30 -340 8 -340 L 30 -340 L 30 -40 Z" fill="url(#metal)" stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M 18 -330 L 18 -52" stroke="#0b0b0b" stroke-opacity=".45" stroke-width="3"/>
+  <rect x="-20" y="-42" width="36" height="24" fill="url(#metal)" stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round"/>
+  <rect x="-27" y="-18" width="54" height="330" rx="24" fill="url(#handle)" stroke="url(#metal)" stroke-width="8"/>
+  <circle cx="0" cy="12" r="8" fill="url(#metal)" stroke="#0b0b0b" stroke-width="3"/>
+  <circle cx="0" cy="282" r="8" fill="url(#metal)" stroke="#0b0b0b" stroke-width="3"/>
+</g>
+
+<!-- barber pole -->
+<circle cx="600" cy="268" r="30" fill="url(#gold)" stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round"/>
+<rect x="524" y="296" width="152" height="22" rx="8" fill="url(#gold)" stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round"/>
+<rect x="536" y="316" width="128" height="36" rx="6" fill="url(#gold)" stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round"/>
+<g clip-path="url(#tube)">
+  <rect x="540" y="350" width="120" height="500" fill="url(#stripes)"/>
+  <rect x="540" y="350" width="120" height="500" fill="url(#glass)"/>
+</g>
+<rect x="540" y="350" width="120" height="500" rx="10" fill="none" stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round"/>
+<rect x="536" y="848" width="128" height="36" rx="6" fill="url(#gold)" stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round"/>
+<rect x="524" y="882" width="152" height="22" rx="8" fill="url(#gold)" stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round"/>
+<path d="M 560 904 L 640 904 L 618 940 L 582 940 Z" fill="url(#gold)" stroke="#0b0b0b" stroke-width="5" stroke-linejoin="round"/>
+</svg>
