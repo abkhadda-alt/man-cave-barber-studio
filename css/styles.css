@@ -16,6 +16,9 @@
   --display: "Oswald", "Arial Narrow", sans-serif;
   --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --wrap: 1120px;
+  /* Motion: strong custom curves (built-in ease is too weak) */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 * { box-sizing: border-box; }
@@ -41,13 +44,15 @@ button { font: inherit; color: inherit; cursor: pointer; }
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   padding: 14px 24px; border-radius: 999px; border: 1px solid transparent;
   font-weight: 600; font-size: 15px; text-decoration: none; letter-spacing: .01em;
-  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  transition: transform 160ms var(--ease-out), background-color 150ms ease, border-color 150ms ease;
 }
-.btn:hover { transform: translateY(-1px); }
+.btn:active:not([disabled]) { transform: scale(0.97); }
 .btn-gold { background: var(--gold); color: #17170f; }
-.btn-gold:hover { background: var(--gold-2); }
 .btn-ghost { border-color: rgba(255,255,255,.25); background: rgba(0,0,0,.25); }
-.btn-ghost:hover { border-color: var(--gold); }
+@media (hover: hover) and (pointer: fine) {
+  .btn-gold:hover { background: var(--gold-2); }
+  .btn-ghost:hover { border-color: var(--gold); }
+}
 .btn-sm { padding: 9px 16px; font-size: 14px; }
 .btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
 
@@ -165,8 +170,10 @@ section.block { padding: 88px 0; }
   overflow: hidden; display: flex; flex-direction: column;
 }
 .barber-photo { position: relative; aspect-ratio: 4 / 5; background: var(--bg-2); overflow: hidden; }
-.barber-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
-.barber:hover .barber-photo img { transform: scale(1.04); }
+.barber-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 300ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .barber:hover .barber-photo img { transform: scale(1.04); }
+}
 .barber-photo::after {
   content: ""; position: absolute; inset: auto 0 0 0; height: 40%;
   background: linear-gradient(180deg, transparent, rgba(29,29,25,.85));
@@ -309,7 +316,7 @@ body.loading { overflow: hidden; }
   font-size: clamp(60px, 16vw, 250px); line-height: .82; letter-spacing: -.005em;
 }
 .ld-slot { display: block; width: .74em; height: .92em; }
-.ld-word { transition: transform .95s cubic-bezier(.76,0,.24,1), opacity .5s ease; }
+.ld-word { transition: transform .95s var(--ease-in-out), opacity .6s var(--ease-in-out); }
 .loader.reveal .ld-left { transform: translateX(-70vw); opacity: 0; }
 .loader.reveal .ld-right { transform: translateX(70vw); opacity: 0; }
 .ld-photo { position: absolute; z-index: 2; overflow: hidden; border-radius: 4px; background: #222; }
@@ -391,3 +398,24 @@ a.rating:hover b { color: var(--gold); }
   .svc-img { width: 92px; min-height: 92px; }
 }
 .demo-note[hidden] { display: none; }
+
+/* ================= Interaction polish (Emil Kowalski's design-engineering rules) ================= */
+/* Press feedback on everything tappable: the UI confirms it heard you */
+.opt, .day, .slot, .langs button, .step-edit {
+  transition: transform 160ms var(--ease-out), border-color 150ms ease, background-color 150ms ease;
+}
+.opt:active, .day:active:not([disabled]), .slot:active, .langs button:active { transform: scale(0.97); }
+
+/* Hover only on devices with a real mouse (taps on phones would leave "stuck" hover states) */
+@media (hover: none) {
+  .svc:hover { border-color: var(--line); }
+  .opt:hover:not([aria-pressed="true"]) { border-color: var(--line); }
+  .slot:hover:not([aria-pressed="true"]) { border-color: var(--line); }
+}
+
+/* Reduced motion: keep fades that help understanding, drop movement and zoom */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn:active, .opt:active, .day:active, .slot:active, .langs button:active { transform: none; }
+  .barber:hover .barber-photo img { transform: none; }
+}
