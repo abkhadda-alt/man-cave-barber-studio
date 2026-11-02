@@ -2,7 +2,7 @@
 
 **Live site:** https://man-cave-barber-studio.vercel.app
 
-A static website (FR / EN / ES) and a booking page that puts appointments straight on each barber's Google Calendar. No monthly fees: the site can be hosted free (Netlify, Vercel, GitHub Pages) and the booking backend is a free Google Apps Script.
+Website created for a barbershop allowing customers to see the owners work and book an appointment with preferred barber. Once the clients book, the appointment info is then sent to the client and onto the preferred barber's google calender.
 
 ```
 index.html          Homepage: hero, Tuesday promo, services & prices, team, hours, map
